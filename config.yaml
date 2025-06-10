@@ -1,0 +1,29 @@
+# Strava Data Pipeline Configuration
+
+# Database configuration
+database:
+  # These values will be overridden by environment variables if set
+  host: "localhost"  # DB_HOST
+  port: 5432         # DB_PORT
+  user: "postgres"   # DB_USER
+  password: ""       # DB_PASSWORD
+  name: "strava_data" # DB_NAME
+  sslmode: "disable" # DB_SSL_MODE - Use "require" for production
+
+# Strava API configuration
+strava:
+  client_id: 0       # STRAVA_CLIENT_ID
+  client_secret: ""  # STRAVA_CLIENT_SECRET
+  callback_url: "http://localhost:8080/auth/callback" # STRAVA_CALLBACK_URL
+  access_token: ""   # STRAVA_ACCESS_TOKEN - Will be populated after authentication
+  refresh_token: ""  # STRAVA_REFRESH_TOKEN - Will be populated after authentication
+
+# Server configuration
+server:
+  port: 8080         # SERVER_PORT
+  host: "0.0.0.0"    # SERVER_HOST
+
+# Authentication configuration
+auth:
+  jwt_secret: "change-me-in-production" # JWT_SECRET - Will use environment variable if set
+  token_duration: 60                   # TOKEN_DURATION - Minutes
