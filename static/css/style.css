@@ -1,0 +1,196 @@
+/*
+   Main styles for Strava Data Pipeline
+*/
+
+:root {
+  --primary-color: #FC4C02; /* Strava orange */
+  --secondary-color: #2D2D2D; /* Dark gray */
+  --light-color: #F7F7FA;
+  --border-color: #E5E5E5;
+  --success-color: #4CAF50;
+  --error-color: #F44336;
+}
+
+/* Strava Connect Button */
+.strava-connect {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.strava-connect:hover {
+  background-color: #E34402;
+  text-decoration: none;
+}
+
+.strava-connect img {
+  height: 24px;
+  margin-right: 8px;
+}tyles for Strava Data Pipeline
+*/
+
+:root {
+  --primary-color: #FC4C02; /* Strava orange */
+  --secondary-color: #2D2D2D; /* Dark gray */
+  --light-color: #F7F7FA;
+  --border-color: #E5E5E5;
+  --success-color: #4CAF50;
+  --error-color: #F44336;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  background-color: var(--light-color);
+  color: var(--secondary-color);
+  padding: 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+h1, h2, h3 {
+  margin-bottom: 15px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+  background-color: #f8f9fa;
+}
+
+.key-display {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: monospace;
+  margin: 10px 0;
+  border: 1px solid var(--border-color);
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

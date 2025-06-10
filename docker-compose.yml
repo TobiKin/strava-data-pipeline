@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_NAME=strava_data
+      - DATABASE_SSLMODE=disable
+      - STRAVA_CLIENT_ID=${STRAVA_CLIENT_ID}
+      - STRAVA_CLIENT_SECRET=${STRAVA_CLIENT_SECRET}
+      - AUTH_JWT_SECRET=${JWT_SECRET:-change-me-in-production}
+    depends_on:
+      - db
+    restart: unless-stopped
+    volumes:
+      - ./config.yaml:/config.yaml:ro
+
+  db:
+    image: postgres:16-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=strava_data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
